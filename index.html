@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopWatch</title>
+    <style>
+        /* Base Body Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: hsl(0, 0%, 95%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+/* Main Heading */
+#myh1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: hsl(0, 0%, 20%);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Stopwatch Container */
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 50px;
+    border-radius: 25px;
+    background: hsl(0, 0%, 100%);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 
+                inset 0 -2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Time Display */
+#display {
+    font-size: 5rem;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    color: hsl(0, 0%, 25%);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    margin-bottom: 35px;
+    letter-spacing: 2px;
+}
+
+/* Control Buttons */
+#controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+#controls button {
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+#controls button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* Individual Button Colors */
+#startbtn {
+    background: linear-gradient(145deg, hsl(115, 100%, 50%), hsl(115, 100%, 40%));
+}
+
+#stopbtn {
+    background: linear-gradient(145deg, hsl(10, 90%, 55%), hsl(10, 90%, 45%));
+}
+
+#resetbtn {
+    background: linear-gradient(145deg, hsl(205, 95%, 65%), hsl(205, 95%, 55%));
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 768px) {
+    #myh1 {
+        font-size: 2.5rem;
+    }
+    #display {
+        font-size: 3.5rem;
+    }
+    #controls button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <h1 id="myh1">StopWatch</h1>
+    <div id="container">
+    <div id="display">
+        00:00:00:00
+    </div>
+    <div id="controls">
+        <button id="startbtn" onclick="start()">start</button>
+        <button id="stopbtn" onclick="stop()">Stop</button>
+        <button id="resetbtn" onclick="reset()">Reset</button>
+    </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
